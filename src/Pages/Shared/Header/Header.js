@@ -38,29 +38,20 @@ const Header = () => {
                 <Nav.Link className="fw-bold" href="home#experts">
                   EXPARTS
                 </Nav.Link>
+                <Nav.Link className="fw-bold" as={Link} to="blog">
+                  BLOG
+                </Nav.Link>
               </Nav>
               <Nav>
                 {user && (
                   <>
-                    <Nav.Link
-                      className="fw-bold"
-                      as={Link}
-                      to="manage"
-                    >
+                    <Nav.Link className="fw-bold" as={Link} to="manage">
                       MANAGE ITEM
                     </Nav.Link>
-                    <Nav.Link
-                      className="fw-bold"
-                      as={Link}
-                      to="addservice"
-                    >
+                    <Nav.Link className="fw-bold" as={Link} to="addservice">
                       ADD ITEM
                     </Nav.Link>
-                    <Nav.Link
-                      className="fw-bold"
-                      as={Link}
-                      to="orders"
-                    >
+                    <Nav.Link className="fw-bold" as={Link} to="orders">
                       MY ITEM
                     </Nav.Link>
                   </>

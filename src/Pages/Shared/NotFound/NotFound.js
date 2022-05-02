@@ -1,12 +1,24 @@
 import React from 'react';
-import sleeping from '../../../images/sleeping.jpg';
+import { Card } from 'react-bootstrap';
+import sleeping from '../../../images/sleeping.png';
+
+ const style = {
+   width: "100%",
+   height: "400px",
+ };
 
 const NotFound = () => {
     return (
-        <div>
-            <h2 className='text-primary text-center'>Mechanic is sleeping</h2>
-            <img className='w-100' src={sleeping} alt="" />
-        </div>
+      <div>
+        <Card>
+          <Card.Img style={style} variant="top" src={sleeping} />
+          <Card.Body>
+            <Card.Text className='text-center fw-bold'>
+              404 NOT FOUND.YOU CAN BE WRONG!
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
     );
 };
 
