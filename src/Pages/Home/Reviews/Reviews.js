@@ -12,9 +12,9 @@ const Reviews = () => {
 
   return (
     <div>
-      <div className="bg-info">
-        <h1 className="text-center mt-5 pt-3">Customer Reviews</h1>
-        <div className="container services-container mt-5 pb-5  ">
+      <div className="product-information">
+        <h1 className="text-center pt-5 ">CUSTOMER REVIEW</h1>
+        <div className="container gap-5 services-container mt-5 pb-5  ">
           {reviews.map((review) => (
             <Review review={review} key={review.id}></Review>
           ))}

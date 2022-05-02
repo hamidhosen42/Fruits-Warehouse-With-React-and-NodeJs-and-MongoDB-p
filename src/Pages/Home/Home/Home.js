@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Banner from '../Banner/Banner';
+import ProductService from '../ProductService/ProductService';
 import Reviews from '../Reviews/Reviews';
 import Services from '../Services/Services';
 
@@ -10,7 +11,8 @@ const Home = () => {
             <PageTitle title="Home"></PageTitle>
             <Banner></Banner>
             <Services></Services>
-           <Reviews></Reviews>
+            <ProductService></ProductService>
+            <Reviews></Reviews>
         </>
     );
 };
