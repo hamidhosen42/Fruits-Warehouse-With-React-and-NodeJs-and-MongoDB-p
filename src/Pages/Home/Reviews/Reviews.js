@@ -12,7 +12,7 @@ const Reviews = () => {
 
   return (
     <div>
-      <div className="product-information">
+      <div className="reviews-color">
         <h1 className="text-center pt-5 ">CUSTOMER REVIEW</h1>
         <div className="container gap-5 services-container mt-5 pb-5  ">
           {reviews.map((review) => (

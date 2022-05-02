@@ -4,11 +4,11 @@
 }
 .product-information
 {
-    color: black;
-    background-color: aqua;
+    color: white;
+    background-color: black;
 }
 .product-information:hover
 {
-    background-color:black;
-    color: white;
+    background-color:aqua;
+    color: black;
 }

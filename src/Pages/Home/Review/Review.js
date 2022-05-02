@@ -10,7 +10,7 @@ const Review = (props) => {
     props.review;
   return (
     <div>
-      <Card className="card-information shadow-lg bg-danger text-white">
+      <Card className="card-information shadow-lg bg-dark text-white">
         <Card.Img className="img-height" variant="top" src={img} />
         <Card.Body>
           <Card.Title className="text-center">Name:{name}</Card.Title>
