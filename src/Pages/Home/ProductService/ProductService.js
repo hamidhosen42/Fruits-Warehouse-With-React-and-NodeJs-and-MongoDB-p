@@ -4,7 +4,7 @@ import "./ProductService.css";
 
 const ProductService = () => {
   return (
-    <div className=" mt-5 text-white bg-secondary p-5">
+    <div className="text-white bg-secondary p-5">
       <Container>
         <Row className="product-information row-cols-1 row-cols-lg-2">
           <Col>

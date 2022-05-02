@@ -10,7 +10,7 @@ const Review = (props) => {
     props.review;
   return (
     <div>
-      <Card className="card-information shadow-lg bg-dark text-white">
+      <Card className=" shadow-lg bg-dark text-white">
         <Card.Img className="img-height" variant="top" src={img} />
         <Card.Body>
           <Card.Title className="text-center">Name:{name}</Card.Title>
@@ -35,8 +35,8 @@ const Review = (props) => {
               : details_review}
           </Card.Text>
         </Card.Body>
-        <Card.Footer>
-          <small className="text-center">{date}</small>
+        <Card.Footer className="bg-info">
+          <small className="text-center text-white">{date}</small>
         </Card.Footer>
       </Card>
     </div>

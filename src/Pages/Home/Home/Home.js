@@ -3,14 +3,14 @@ import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Banner from '../Banner/Banner';
 import ProductService from '../ProductService/ProductService';
 import Reviews from '../Reviews/Reviews';
-import Services from '../Services/Services';
+import Inventorys from "../Inventorys/Inventorys";
 
 const Home = () => {
     return (
         < >
             <PageTitle title="Home"></PageTitle>
             <Banner></Banner>
-            <Services></Services>
+            <Inventorys></Inventorys>
             <ProductService></ProductService>
             <Reviews></Reviews>
         </>
