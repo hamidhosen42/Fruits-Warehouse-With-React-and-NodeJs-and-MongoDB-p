@@ -1,73 +1,136 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Table } from "react-bootstrap";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Blog = () => {
   return (
-    <div className="container text-center mt-4">
+    <div className="container text-center mt-5">
       <PageTitle title="Blog"></PageTitle>
-      <Card border="primary text-white bg-dark">
+      <Card border="primary text-white bg-info">
         <Card.Body>
-          <Card.Title className="text-primary">
-            Difference between authorization and authentication
+          <Card.Title className="text-dark fw-bold p-3">
+            Difference between javascript and nodejs
+          </Card.Title>
+          <Table striped bordered hover variant="dark">
+            <thead>
+              <tr>
+                <th>JAVASCRIPT</th>
+                <th>NODEJS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Javascript is a programming language that is used for writing
+                  scripts on the website
+                </td>
+                <td>NodeJS is a Javascript runtime environment.</td>
+              </tr>
+              <tr>
+                <td>Javascript can only be run in the browsers.</td>
+                <td>
+                  We can run Javascript outside the browser with the help of
+                  NodeJS.
+                </td>
+              </tr>
+              <tr>
+                <td>It is basically used on the client-side.</td>
+                <td>It is mostly used on the server-side.</td>
+              </tr>
+              <tr>
+                <td>Javascript is used in frontend development.</td>
+                <td>Nodejs is used in server-side development.</td>
+              </tr>
+              <tr>
+                <td>
+                  It is the upgraded version of ECMA script that uses Chrome’s
+                  V8 engine written in C++
+                </td>
+                <td>Nodejs is written in C, C++ and Javascript.</td>
+              </tr>
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Card>
+      <Card border="primary text-white bg-info mt-5">
+        <Card.Body>
+          <Card.Title className="text-dark fw-bold p-3">
+            Differences between sql and nosql databases.
+          </Card.Title>
+          <Table striped bordered hover variant="dark">
+            <thead>
+              <tr>
+                <th>SQL</th>
+                <th>NOSQL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)</td>
+                <td>Non-relational or distributed database system.</td>
+              </tr>
+              <tr>
+                <td>
+                  These databases have fixed or static or predefined schema
+                </td>
+                <td>They have dynamic schema</td>
+              </tr>
+              <tr>
+                <td>
+                  These databases are not suited for hierarchical data storage.
+                </td>
+                <td>
+                  These databases are best suited for hierarchical data storage.
+                </td>
+              </tr>
+              <tr>
+                <td>These databases are best suited for complex queries.</td>
+                <td>These databases are not so good for complex queries.</td>
+              </tr>
+              <tr>
+                <td>Vertically Scalable</td>
+                <td>Horizontally scalable</td>
+              </tr>
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Card>
+      <Card border="primary text-white bg-dark  mt-5">
+        <Card.Body className="product-information">
+          <Card.Title className="fw-bold">
+            When should you use nodejs and when should you use mongodb
           </Card.Title>
           <Card.Text>
-            <span className="fw-bold">Authorization :: </span>
-            <span>
-              Authorization is the process of specifying access rights/
-              privileges to resources related to information security.
-              Authentication verifies user’s credentials while authorization
-              validates user’s permissions.Verifies user's permission.
-            </span>
-            <br />
-            <br />
-            <span className="fw-bold">Authentication :: </span>
-            <span>
-              Authentication is the process of confirming the truth of an
-              attribute of a single piece of data claimed true by an entity.The
-              authentication checks a person’s details to identify him while the
-              authorization checks a user’s privileges to access
-              resources.Verifies user's credential.
-            </span>
+            Nodejs is a Javascript engine that you can write any application you
+            want with (by programming in the Javascript language). It runs your
+            Javascript code. Most commonly, it is used to build servers that can
+            respond to web requests, though it can be used for lots of other
+            types of code too. MongoDB is a database engine. Code within some
+            application or server uses MongoDB to save, query or update data in
+            a database. There are many web servers built with nodejs that will
+            then use MongoDB for storing data. MongoDB offers an API library
+            that runs within a Nodejs application to give you programmatic
+            access to MongoDB so you can create databases and then add, query,
+            update or delete data from the MongoDB database.
           </Card.Text>
         </Card.Body>
       </Card>
-
-      <br />
-
-      <Card border="primary text-white bg-dark">
-        <Card.Body>
-          <Card.Title className="text-primary">
-            Why are you using firebase? What other options do you have to
-            implement authentication?
+      <Card border="primary text-white bg-dark  mt-5 mb-5">
+        <Card.Body className="product-information">
+          <Card.Title className="fw-bold">
+            What is the purpose of jwt and how does it work
           </Card.Title>
           <Card.Text>
-            Firebase by Google can be used for the following: Firebase manages
-            all data real-time in the database. So, the exchange of data to and
-            fro from the database is easy and quick. Hence, if I am looking to
-            develop mobile apps such as live streaming, chat messaging, etc., I
-            can use Firebase.Back4app is a reliable Firebase alternative that
-            works with an amalgamation of open-source technologies. The platform
-            is straightforward to use and has a low learning curve. It offers
-            features like a relational data model, scalable hosting, REST and
-            GraphQL APIs, notifications, authentication, and storage.
-          </Card.Text>
-        </Card.Body>
-      </Card>
-
-      <br />
-
-      <Card border="primary text-white bg-dark">
-        <Card.Body>
-          <Card.Title className="text-primary">
-            What other services does firebase provide other than authentication
-          </Card.Title>
-          <Card.Text>
-            To use the Firebase Storage we need to authenticate a user via
-            Firebase authentication.There are many services which Firebase
-            provides, Most useful of them are:Cloud Firestore,Cloud
-            Functions,Authentication,Hosting,Cloud Storage.,Google
-            Analytics,Predictions,Cloud Messaging.
+            JWT, or JSON Web Token, is an open standard used to share security
+            information between two parties — a client and a server. Each JWT
+            contains encoded JSON objects, including a set of claims. JWTs are
+            signed using a cryptographic algorithm to ensure that the claims
+            cannot be altered after the token is issued.JWTs differ from other
+            web tokens in that they contain a set of claims. Claims are used to
+            transmit information between two parties. What these claims are
+            depends on the use case at hand. For example, a claim may assert who
+            issued the token, how long it is valid for, or what permissions the
+            client has been granted.
           </Card.Text>
         </Card.Body>
       </Card>
