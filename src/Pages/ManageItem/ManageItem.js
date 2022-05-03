@@ -2,9 +2,9 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const Inventory = ({ inventory }) => {
+const ManageItem = ({ manageItem }) => {
   const { _id, name, quantity, suplierName, img, description, price } =
-    inventory;
+    manageItem;
   const navigate = useNavigate();
 
   const navigateToServiceDetail = (id) => {
@@ -28,15 +28,9 @@ const Inventory = ({ inventory }) => {
               : description}
           </Card.Text>
         </Card.Body>
-        <button
-          onClick={() => navigateToServiceDetail(_id)}
-          className="btn btn-primary"
-        >
-          UPDATE
-        </button>
       </Card>
     </div>
   );
 };
 
-export default Inventory;
+export default ManageItem;

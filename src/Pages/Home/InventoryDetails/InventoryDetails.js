@@ -1,38 +1,25 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import useServiceDetail from '../../../hooks/useServiceDetail';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import useInventoryDetail from '../../../hooks/useInventoryDetail';
+import { Card } from 'react-bootstrap';
 
-const Checkout = () => {
-    const {serviceId} = useParams();
-    const [service] = useServiceDetail(serviceId);
+const InventoryDetails = () => {
+    const {inventoryId} = useParams();
+    const [inventory] = useInventoryDetail(inventoryId);
     const [user] = useAuthState(auth);
-    
-    // const [user, setUser] = useState({
-    //     name: 'Akbar The Great',
-    //     email: 'akbar@momo.taj',
-    //     address: 'Tajmohol Road Md.pur',
-    //     phone: '01711111111'
-    // });
 
-    // const handleAddressChange = event =>{
-    //     console.log(event.target.value);
-    //     const {address, ...rest} = user;
-    //     const newAddress = event.target.value;
-    //     const newUser = {address: newAddress, ...rest};
-    //     console.log(newUser);
-    //     setUser(newUser);
-    // }
+    console.log(inventory);
 
     const handlePlaceOrder = event =>{
         event.preventDefault();
         const order = {
             email:user.email,
-            service: service.name,
-            serviceId: serviceId,
+            inventory: inventory.name,
+            inventoryId: inventoryId,
             address: event.target.address.value,
             phone: event.target.phone.value
         }
@@ -47,23 +34,23 @@ const Checkout = () => {
     }
 
     return (
-        <div className='w-50 mx-auto'>
-            <h2>Please Order: {service.name}</h2>
+      <div className="w-50 mx-auto">
+        <h2>Please Order: {inventory.name}</h2>
             <form onSubmit={handlePlaceOrder}>
                 <input className='w-100 mb-2' type="text" value={user?.displayName} name="name" placeholder='name' required readOnly disabled/>
                 <br />
                 <input className='w-100 mb-2' type="email" value={user?.email} name="email" placeholder='email' required readOnly disabled />
                 <br />
-                <input className='w-100 mb-2' type="text" value={service.name} name="service" placeholder='service' required readOnly />
+                <input className='w-100 mb-2' type="text" value={inventory.name} name="inventory" placeholder='inventory' required readOnly />
                 <br />
                 <input className='w-100 mb-2' type="text" name="address" placeholder='address' autoComplete='off' required />
                 <br />
                 <input className='w-100 mb-2' type="text" name="phone" placeholder='phone' required />
                 <br />
                 <input className='btn btn-primary' type="submit" value="Place Order" />
-            </form>
-        </div>
+            </form> 
+      </div>
     );
 };
 
-export default Checkout;
+export default InventoryDetails;
