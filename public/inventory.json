@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "ORANGE",
         "quantity":"5",
         "suplierName":"Hamid Hosen",
@@ -9,7 +8,6 @@
         "img": "https://i.ibb.co/QX4g3fz/orange.jpg"
     },
     {
-        "_id": 2,
         "name": "GRAPES",
         "quantity":"6",
         "suplierName":"Fahim Hasan",
@@ -18,7 +16,6 @@
         "img": "https://i.postimg.cc/JhCqnZ80/grapes.jpg"
     },
     {
-        "_id": 3,
         "name": "MANGO",
         "quantity":"8",
         "suplierName":"Rafi",
@@ -27,7 +24,6 @@
         "img": "https://i.postimg.cc/rFCnrfhW/becky-mattson-7i-Llg-S5o09c-unsplash.jpg"
     },
     {
-        "_id": 4,
         "name": "PINEAPPLE",
         "quantity":"5",
         "suplierName":"Riad Hosen",
@@ -36,7 +32,6 @@
         "img": "https://i.postimg.cc/qRyXd7Sn/julien-pianetti-Cr9h-Zrp-C1-Oc-unsplash.jpg"
     },
     {
-        "_id": 5,
         "name": "JACKFRUIT",
         "quantity":"5",
         "suplierName":"Rabbi Hosen",
@@ -45,7 +40,6 @@
         "img": "https://i.postimg.cc/76kJ0ntG/jaikishan-patel-p1r-LXd-PQMas-unsplash.jpg"
     },
     {
-        "_id": 6,
         "name": "PAPAYA",
         "quantity":"5",
         "suplierName":"Tarek Hasan",

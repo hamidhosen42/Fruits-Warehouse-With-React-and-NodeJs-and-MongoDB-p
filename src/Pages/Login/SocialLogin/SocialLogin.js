@@ -32,32 +32,28 @@ const SocialLogin = () => {
     }
 
     return (
-        <div>
-            <div className='d-flex align-items-center'>
-                <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-                <p className='mt-2 px-2'>or</p>
-                <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-            </div>
-            {errorElement}
-            <div className=''>
-                <button
-                    onClick={() => signInWithGoogle()}
-                    className='btn btn-info w-50 d-block mx-auto my-2'>
-                    <img style={{ width: '30px' }} src={google} alt="" />
-                    <span className='px-2'>Google Sign In</span>
-                </button>
-                <button className='btn btn-info w-50 d-block mx-auto my-2'>
-                    <img style={{ width: '30px' }} src={facebook} alt="" />
-                    <span className='px-2'>Facebook Sign In</span>
-                </button>
-                <button
-                    onClick={() => signInWithGithub()}
-                    className='btn btn-info w-50 d-block mx-auto'>
-                    <img style={{ width: '30px' }} src={github} alt="" />
-                    <span className='px-2'>Github Sign In</span>
-                </button>
-            </div>
+      <div>
+        <div className="d-flex align-items-center">
+          <div style={{ height: "1px" }} className="bg-white w-50"></div>
+          <p className="mt-2 px-2">or</p>
+          <div style={{ height: "1px" }} className="bg-white w-50"></div>
         </div>
+        {errorElement}
+        <div className="text-center">
+          <button
+            onClick={() => signInWithGoogle()}
+            className="btn btn-info mx-auto"
+          >
+            <img style={{ width: "30px" }} src={google} alt="" />
+          </button>
+          <button
+            onClick={() => signInWithGithub()}
+            className="btn btn-info ms-3 rounded mx-auto"
+          >
+            <img style={{ width: "30px" }} src={github} alt="" />
+          </button>
+        </div>
+      </div>
     );
 };
 

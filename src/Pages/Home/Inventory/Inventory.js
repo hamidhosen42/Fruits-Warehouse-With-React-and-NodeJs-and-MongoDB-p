@@ -1,14 +1,14 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import "./Inventory.css";
+import React from "react";
+import { Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Inventory = ({ inventory }) => {
-  const { _id, name,quantity,suplierName, img, description, price } = inventory;
+  const { _id, name, quantity, suplierName, img, description, price } =
+    inventory;
   const navigate = useNavigate();
 
   const navigateToServiceDetail = (id) => {
-    navigate(`/service/${id}`);
+    navigate(`/inventory/${id}`);
   };
   return (
     <div>

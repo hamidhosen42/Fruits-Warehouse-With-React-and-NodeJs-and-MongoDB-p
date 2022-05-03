@@ -12,7 +12,7 @@ const Footer = () => {
   const year = today.getFullYear();
   return (
     <div className="footer-button bg-dark">
-      <footer className="text-center services-container text-white p-5 footer">
+      <footer className="text-center Inventorys-container text-white p-5 footer">
         <div className="text-start">
           <h5>INFORMATION</h5>
           <p>Address</p>

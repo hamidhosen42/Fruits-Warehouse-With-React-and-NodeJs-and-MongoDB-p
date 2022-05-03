@@ -5,10 +5,8 @@ import "./Inventorys.css";
 const Inventorys = () => {
   const [Inventorys, setInventorys] = useState([]);
 
-  // fetch('https://thawing-mountain-91486.herokuapp.com/service')
-
   useEffect(() => {
-    fetch("inventory.json")
+    fetch("http://localhost:5000/inventory")
       .then((res) => res.json())
       .then((data) => setInventorys(data));
   }, []);
