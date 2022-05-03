@@ -51,7 +51,7 @@ const Header = () => {
                   <Nav.Link className="fw-bold" as={Link} to="additem">
                     ADD ITEM
                   </Nav.Link>
-                  <Nav.Link className="fw-bold" as={Link} to="orders">
+                  <Nav.Link className="fw-bold" as={Link} to="myitem">
                     MY ITEM
                   </Nav.Link>
                 </>
