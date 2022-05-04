@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Card, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const MyItem = () => {
@@ -11,36 +10,31 @@ const MyItem = () => {
   useEffect(() => {
     const email = user?.email;
     const url = `http://localhost:5000/myitem?email=${email}`;
+    console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [user]);
 
+  const handleUserDelete = (id) => {
+    const proceed = window.confirm("Are you sure you want to delete??");
 
-  const handleUserDelete=(id)=>{
-      const proceed=window.confirm("Are you sure you want to delete??");
+    if (proceed) {
+      console.log("Deleting user with id", id);
+      const url = `http://localhost:5000/myitem/${id}`;
 
-      if(proceed)
-      {
-          console.log("Deleting user with id",id);
-          const url = `http://localhost:5000/myitem/${id}`;
-
-          console.log(url);
-
-          fetch(url,{
-              method:"DELETE"
-          })
-          .then(res=>res.json())
-          .then(data=>{
-            //   toast("Delete Successfully");
-             if(data.deletedCount>0)
-             {
-                 const remaining=user.filter(user=>user._id!==id);
-                setItems(remaining);
-             }
-          })
-      }
-  }
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remaining = user.filter((user) => user._id !== id);
+            setItems(remaining);
+          }
+        });
+    }
+  };
 
   return (
     <div className="p-5 bg-info">

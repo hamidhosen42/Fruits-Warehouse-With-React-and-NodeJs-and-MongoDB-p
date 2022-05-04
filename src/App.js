@@ -8,11 +8,13 @@ import InventoryDetails from './Pages/Home/InventoryDetails/InventoryDetails';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import Manageinventory from './Pages/Manageinventory/Manageinventory';
 import ManageItems from './Pages/ManageItems/ManageItems';
 import MyItem from './Pages/MyItem/MyItem';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import Updateitem from './Pages/Updateitem/Updateitem';
 
 function App() {
   return (
@@ -45,6 +47,22 @@ function App() {
           element={
             <RequireAuth>
               <ManageItems></ManageItems>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/manageinventorys"
+          element={
+            <RequireAuth>
+              <Manageinventory></Manageinventory>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/updateitem/:updateitemId"
+          element={
+            <RequireAuth>
+             <Updateitem></Updateitem>
             </RequireAuth>
           }
         ></Route>

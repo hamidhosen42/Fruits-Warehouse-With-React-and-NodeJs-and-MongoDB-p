@@ -26,6 +26,14 @@ const ManageItems = () => {
 
 export default ManageItems;
 
+// import { useNavigate } from "react-router-dom";
+
+  // const navigate = useNavigate();
+
+  // const navigateToServiceDetail = (id) => {
+  //   navigate(`/inventory/${id}`);
+  // };
+
 // const ManageServices = () => {
 //     const [services, setServices] = useServices();
 

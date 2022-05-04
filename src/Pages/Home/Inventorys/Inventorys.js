@@ -5,6 +5,7 @@ import "./Inventorys.css";
 const Inventorys = () => {
   const [Inventorys, setInventorys] = useState([]);
 
+
   useEffect(() => {
     fetch("http://localhost:5000/inventory")
       .then((res) => res.json())

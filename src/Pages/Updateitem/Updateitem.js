@@ -1,32 +1,48 @@
-import React from "react";
-import { Card } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
+import { Card } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const AddItem = () => {
+const Updateitem = () => {
+  const { updateitemId } = useParams();
   const [user] = useAuthState(auth);
+  const [updateInvantory, setUpdateInvantory] = useState({});
+
+  useEffect(() => {
+    const url = `http://localhost:5000/updateitem/${updateitemId}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setUpdateInvantory(data));
+  }, [updateitemId]);
 
   const handlePlaceOrder = (event) => {
     event.preventDefault();
-    const item = {
-      name: event.target.name.value,
-      suplierName: event.target.supplier.value,
-      price: event.target.price.value,
-      quantity: event.target.quantity.value,
-      img: event.target.imgurl.value,
-      description: event.target.description.value,
-    };
+    const name = event.target.name.value;
+    const suplierName = event.target.supplier.value;
+    const price = event.target.price.value;
+    const quantity = event.target.quantity.value;
+    const img = event.target.imgurl.value;
+    const description = event.target.description.value;
 
-    axios.post("http://localhost:5000/additem", item).then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        toast("Your are inventory item add.");
+    const item = { name, suplierName, price, quantity, img, description };
+
+    const url = `http://localhost:5000/updateitem/${updateitemId}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(item),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("success", data);
+        toast("Your are inventory item update.");
         event.target.reset();
-      }
-    });
+      });
   };
 
   return (
@@ -103,7 +119,7 @@ const AddItem = () => {
           <input
             className="p-2 w-100 fw-bold  mt-3 bg-info rounded tw-bold"
             type="submit"
-            value="Add Inventory"
+            value="Update Inventory"
           />
         </form>
       </Card>
@@ -111,4 +127,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default Updateitem;

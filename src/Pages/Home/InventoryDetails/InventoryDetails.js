@@ -1,7 +1,7 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useInventoryDetail from "../../../hooks/useInventoryDetail";
-import { Card } from "react-bootstrap";
+import { Card, Nav } from "react-bootstrap";
 
 const InventoryDetails = () => {
   const { inventoryId } = useParams();
@@ -9,9 +9,8 @@ const InventoryDetails = () => {
 
   const handleDwlivers = () => {
     let inventoryquantity;
-    if((inventory.quantity - 1)>=0)
-    {
-        inventoryquantity = inventory.quantity - 1;
+    if (inventory.quantity - 1 >= 0) {
+      inventoryquantity = inventory.quantity - 1;
     }
     const uantity = {
       quantity: inventoryquantity.toString(),
@@ -31,10 +30,11 @@ const InventoryDetails = () => {
   };
 
   const handleSubmit = (event) => {
+    const e =
+      parseInt(event.target.quantity.value) + parseInt(inventory.quantity);
     const Quantity = {
-      quantity: event.target.quantity.value,
+      quantity: e.toString(),
     };
-    console.log(Quantity);
     const url = `http://localhost:5000/inventory/${inventoryId}`;
     fetch(url, {
       method: "PUT",
@@ -88,6 +88,24 @@ const InventoryDetails = () => {
             Delivered
           </button>
         </form>
+      </Card>
+      <Card className="container mt-5 w-50 mx-auto shadow-lg rounded-3 bg-dark text-white p-4">
+        <Nav.Link
+          className="btn btn-info fw-bold text-dark mt-3"
+          as={Link}
+          to="/manageinventorys"
+        >
+          Manage Inventories
+        </Nav.Link>
+      </Card>
+      <Card className="container mt-5 w-50 mx-auto shadow-lg rounded-3 bg-dark text-white p-4">
+        <Nav.Link
+          className="btn btn-info fw-bold text-dark mt-3"
+          as={Link}
+          to="/additem"
+        >
+          Add new item
+        </Nav.Link>
       </Card>
     </div>
   );
