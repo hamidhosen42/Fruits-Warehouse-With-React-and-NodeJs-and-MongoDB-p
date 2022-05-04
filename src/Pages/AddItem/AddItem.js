@@ -20,6 +20,8 @@ const AddItem = () => {
       img: event.target.imgurl.value,
       description: event.target.description.value,
     };
+
+    console.log(item);
     axios.post("http://localhost:5000/additem", item).then((response) => {
       const { data } = response;
       if (data.insertedId) {
