@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import { Button, Card, Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
@@ -42,27 +42,23 @@ const MyItem = () => {
 
       {items.map((item) => (
         <div key={item._id}>
-          <Table className="bg-dark mt-3" striped bordered hover>
-            <tbody>
-              <tr>
-                <td className="text-white">{item.email}</td>
-                <td className="text-white">{item.name}</td>
-                <td className="text-white">{item.suplierName}</td>
-                <td className="text-white">{item.quantity}</td>
-                <td className="text-center">
-                  <form>
-                    <button
-                      onClick={() => handleUserDelete(item._id)}
-                      className="btn btn-info text-center"
-                      type="submit"
-                    >
-                      Delete
-                    </button>
-                  </form>
-                </td>
-              </tr>
-            </tbody>
-          </Table>
+          <Card className="text-center text-white bg-dark mt-3">
+            <Card.Header>Name : {item.name}</Card.Header>
+            <Card.Body>
+              <Card.Title>{item.email}</Card.Title>
+              <Card.Text>SuplierName : {item.suplierName}</Card.Text>
+              <Card.Text>Quantit : {item.quantity}</Card.Text>
+              <form>
+                <button
+                  onClick={() => handleUserDelete(item._id)}
+                  className="btn btn-info text-center"
+                  type="submit"
+                >
+                  Delete
+                </button>
+              </form>
+            </Card.Body>
+          </Card>
         </div>
       ))}
     </div>
