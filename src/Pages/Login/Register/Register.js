@@ -11,6 +11,7 @@ import { Card } from 'react-bootstrap';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Register = () => {
+
     const [
         createUserWithEmailAndPassword,
         user,

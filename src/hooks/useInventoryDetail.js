@@ -5,7 +5,6 @@ const useInventoryDetail = (inventoryId) => {
 
   useEffect(() => {
     const url = `http://localhost:5000/inventory/${inventoryId}`;
-    console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));

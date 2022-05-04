@@ -5,13 +5,36 @@ import { Card } from "react-bootstrap";
 
 const InventoryDetails = () => {
   const { inventoryId } = useParams();
-  const [inventory, setInventory] = useInventoryDetail(inventoryId);
+  const [inventory] = useInventoryDetail(inventoryId);
+
+  const handleDwlivers = () => {
+    let inventoryquantity;
+    if((inventory.quantity - 1)>=0)
+    {
+        inventoryquantity = inventory.quantity - 1;
+    }
+    const uantity = {
+      quantity: inventoryquantity.toString(),
+    };
+    const url = `http://localhost:5000/inventory/${inventoryId}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(uantity),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   const handleSubmit = (event) => {
-    //   const { Quantity } = inventory.quantity+1;
     const Quantity = {
       quantity: event.target.quantity.value,
     };
+    console.log(Quantity);
     const url = `http://localhost:5000/inventory/${inventoryId}`;
     fetch(url, {
       method: "PUT",
@@ -22,7 +45,7 @@ const InventoryDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setInventory(data);
+        console.log(data);
       });
   };
 
@@ -60,9 +83,11 @@ const InventoryDetails = () => {
             Quantity Update
           </button>
         </form>
-        {/* <button onClick={handleSubmit} className="btn btn-primary">
+        <form className="text-center" onSubmit={handleDwlivers}>
+          <button className="btn mt-3 btn-primary w-50 mx-auto">
             Delivered
-          </button> */}
+          </button>
+        </form>
       </Card>
     </div>
   );
