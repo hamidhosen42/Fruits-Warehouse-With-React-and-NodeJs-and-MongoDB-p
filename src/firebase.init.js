@@ -1,17 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth} from 'firebase/auth';
+import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDPG8wV8pdbKbzpLH1Qxn5oCDsWE5fwbD0",
-  authDomain: "genius-car-service-client-jwt.firebaseapp.com",
-  projectId: "genius-car-service-client-jwt",
-  storageBucket: "genius-car-service-client-jwt.appspot.com",
-  messagingSenderId: "375649583084",
-  appId: "1:375649583084:web:26bb054495a7692e118ac9",
+  apiKey: "AIzaSyA48PXDH2OadowgqGN9X9wq-5G5FgiHzB8",
+  authDomain: "fruits-warehouse-client-site.firebaseapp.com",
+  projectId: "fruits-warehouse-client-site",
+  storageBucket: "fruits-warehouse-client-site.appspot.com",
+  messagingSenderId: "416865617613",
+  appId: "1:416865617613:web:4f580e70bdf01180ad4b84",
 };
 
 // Initialize Firebase

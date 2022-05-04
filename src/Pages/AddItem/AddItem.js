@@ -1,7 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
 import axios from "axios";
 import { toast } from "react-toastify";
