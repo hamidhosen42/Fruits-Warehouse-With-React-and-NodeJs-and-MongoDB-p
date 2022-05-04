@@ -16,7 +16,7 @@ const Inventory = ({ inventory }) => {
       <Card className="shadow-lg bg-dark text-white">
         <Card.Img className="img-height" variant="top" src={img} />
         <Card.Body>
-          <Card.Title className="text-center">Name:{_id}</Card.Title>
+          <Card.Title className="text-center">Name:{name}</Card.Title>
           <Card.Text className="text-center">
             Supplier Name : {suplierName}
           </Card.Text>
