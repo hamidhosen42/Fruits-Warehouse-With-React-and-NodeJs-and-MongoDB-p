@@ -1,5 +1,5 @@
 import React from "react";
-import { Card} from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import useInventory from "../../hooks/useInventory";
 import { useNavigate } from "react-router-dom";
 
@@ -10,12 +10,13 @@ const Manageinventory = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/manageinventorys/${id}`;
+      const url = `https://stark-crag-02396.herokuapp.com/manageinventorys/${id}`;
       console.log(url);
 
       fetch(url, {
         method: "DELETE",
-      }).then((res) => res.json())
+      })
+        .then((res) => res.json())
         .then((data) => {
           console.log(data);
           const remaining = Inventory.filter((service) => service._id !== id);
@@ -24,9 +25,9 @@ const Manageinventory = () => {
     }
   };
 
-    const navigateToServiceDetail = (id) => {
-      navigate(`/updateitem/${id}`);
-    };
+  const navigateToServiceDetail = (id) => {
+    navigate(`/updateitem/${id}`);
+  };
 
   return (
     <div className="reviews-color">

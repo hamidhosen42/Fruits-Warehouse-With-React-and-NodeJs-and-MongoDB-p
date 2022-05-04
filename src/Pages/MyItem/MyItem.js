@@ -9,8 +9,7 @@ const MyItem = () => {
 
   useEffect(() => {
     const email = user?.email;
-    const url = `http://localhost:5000/myitem?email=${email}`;
-    console.log(url);
+    const url = `https://stark-crag-02396.herokuapp.com/myitem?email=${email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));
@@ -21,7 +20,7 @@ const MyItem = () => {
 
     if (proceed) {
       console.log("Deleting user with id", id);
-      const url = `http://localhost:5000/myitem/${id}`;
+      const url = `https://stark-crag-02396.herokuapp.com/myitem/${id}`;
 
       fetch(url, {
         method: "DELETE",

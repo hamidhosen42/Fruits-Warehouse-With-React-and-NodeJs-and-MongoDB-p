@@ -11,6 +11,7 @@ const AddItem = () => {
   const handlePlaceOrder = (event) => {
     event.preventDefault();
     const item = {
+      email: user?.email,
       name: event.target.name.value,
       suplierName: event.target.supplier.value,
       price: event.target.price.value,
@@ -19,13 +20,15 @@ const AddItem = () => {
       description: event.target.description.value,
     };
 
-    axios.post("http://localhost:5000/additem", item).then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        toast("Your are inventory item add.");
-        event.target.reset();
-      }
-    });
+    axios
+      .post("https://stark-crag-02396.herokuapp.com/additem", item)
+      .then((response) => {
+        const { data } = response;
+        if (data.insertedId) {
+          toast("Your are inventory item add.");
+          event.target.reset();
+        }
+      });
   };
 
   return (

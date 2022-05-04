@@ -6,7 +6,6 @@ import { Card, Nav } from "react-bootstrap";
 const InventoryDetails = () => {
   const { inventoryId } = useParams();
   const [inventory] = useInventoryDetail(inventoryId);
-  
 
   const handleDwlivers = () => {
     let inventoryquantity;
@@ -16,7 +15,7 @@ const InventoryDetails = () => {
     const uantity = {
       quantity: inventoryquantity.toString(),
     };
-    const url = `http://localhost:5000/inventory/${inventoryId}`;
+    const url = `https://stark-crag-02396.herokuapp.com/inventory/${inventoryId}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -36,7 +35,7 @@ const InventoryDetails = () => {
     const Quantity = {
       quantity: e.toString(),
     };
-    const url = `http://localhost:5000/inventory/${inventoryId}`;
+    const url = `https://stark-crag-02396.herokuapp.com/inventory/${inventoryId}`;
     fetch(url, {
       method: "PUT",
       headers: {

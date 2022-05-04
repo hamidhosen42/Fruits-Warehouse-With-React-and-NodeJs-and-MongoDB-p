@@ -11,7 +11,7 @@ const Updateitem = () => {
   const [updateInvantory, setUpdateInvantory] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/updateitem/${updateitemId}`;
+    const url = `https://stark-crag-02396.herokuapp.com/updateitem/${updateitemId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUpdateInvantory(data));
@@ -28,7 +28,7 @@ const Updateitem = () => {
 
     const item = { name, suplierName, price, quantity, img, description };
 
-    const url = `http://localhost:5000/updateitem/${updateitemId}`;
+    const url = `https://stark-crag-02396.herokuapp.com/updateitem/${updateitemId}`;
     fetch(url, {
       method: "PUT",
       headers: {
