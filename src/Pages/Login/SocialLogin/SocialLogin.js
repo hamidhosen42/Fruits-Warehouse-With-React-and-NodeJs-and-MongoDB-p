@@ -1,6 +1,5 @@
 import React from 'react';
 import google from '../../../images/social/google.png';
-import facebook from '../../../images/social/facebook.png';
 import github from '../../../images/social/github.png';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';

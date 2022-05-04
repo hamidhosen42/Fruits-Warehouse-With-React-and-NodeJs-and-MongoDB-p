@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useInventoryDetail = (inventoryId) => {
+const useInventoryDetail = (inventoryId ) => {
   const [inventory, setInventory] = useState({});
 
   useEffect(() => {

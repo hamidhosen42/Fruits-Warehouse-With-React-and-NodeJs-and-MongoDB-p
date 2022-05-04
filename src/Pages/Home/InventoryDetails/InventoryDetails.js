@@ -6,6 +6,7 @@ import { Card, Nav } from "react-bootstrap";
 const InventoryDetails = () => {
   const { inventoryId } = useParams();
   const [inventory] = useInventoryDetail(inventoryId);
+  
 
   const handleDwlivers = () => {
     let inventoryquantity;

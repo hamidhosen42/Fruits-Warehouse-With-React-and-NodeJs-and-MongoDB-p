@@ -6,6 +6,7 @@ const Inventory = ({ inventory }) => {
   const { _id, name, quantity, suplierName, img, description, price } =
     inventory;
   const navigate = useNavigate();
+  console.log(_id);
 
   const navigateToServiceDetail = (id) => {
     navigate(`/inventory/${id}`);
@@ -15,7 +16,7 @@ const Inventory = ({ inventory }) => {
       <Card className="shadow-lg bg-dark text-white">
         <Card.Img className="img-height" variant="top" src={img} />
         <Card.Body>
-          <Card.Title className="text-center">Name:{name}</Card.Title>
+          <Card.Title className="text-center">Name:{_id}</Card.Title>
           <Card.Text className="text-center">
             Supplier Name : {suplierName}
           </Card.Text>

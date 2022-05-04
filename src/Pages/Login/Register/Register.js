@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './Register.css';
@@ -9,6 +8,7 @@ import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../../hooks/useToken';
 import { Card } from 'react-bootstrap';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -18,7 +18,9 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    
     const [token] = useToken(user);
     const navigate = useNavigate();
 
@@ -39,12 +41,11 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        // const agree = event.target.terms.checked;
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        console.log('Updated profile');
-        // 
+
+        toast("Register Complete.");
     }
 
     return (

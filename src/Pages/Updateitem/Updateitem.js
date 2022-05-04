@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { Card } from "react-bootstrap";
-import axios from "axios";
 import { toast } from "react-toastify";
 
 const Updateitem = () => {
