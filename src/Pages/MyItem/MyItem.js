@@ -7,14 +7,6 @@ const MyItem = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    const email = user?.email;
-    const url = `https://stark-crag-02396.herokuapp.com/myitem?email=${email}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, [user]);
-
   const handleUserDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete??");
 
@@ -34,6 +26,15 @@ const MyItem = () => {
         });
     }
   };
+
+    useEffect(() => {
+      const email = user?.email;
+      const url = `https://stark-crag-02396.herokuapp.com/myitem?email=${email}`;
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setItems(data));
+    }, [user]);
+
 
   return (
     <div className="p-5 bg-info">
